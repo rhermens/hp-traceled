@@ -3,11 +3,8 @@ CFLAGS=-I. -lhidapi-libusb -pedantic-errors -Wall
 DEPS=
 DESTDIR=/usr/bin
 
-hp-traceled: hp-traceled.c $(DEPS)
-	$(CC) -o hp-traceled hp-traceled.c $(DEPS) $(CFLAGS)
-
-# install:
-# 	cp git-watch $(DESTDIR)
+hp-tracerled: hp-tracerled.c $(DEPS)
+	$(CC) -o hp-tracerled hp-tracerled.c $(DEPS) $(CFLAGS)
 
 clean:
-	rm hp-traceled
+	rm hp-tracerled

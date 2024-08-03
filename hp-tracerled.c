@@ -1,5 +1,5 @@
 #include <hidapi/hidapi.h>
-#include "hp-traceled.h"
+#include "hp-tracerled.h"
 
 const unsigned char RED = 0xFD;
 const unsigned char GREEN = 0x40;
