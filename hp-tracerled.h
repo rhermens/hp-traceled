@@ -3,18 +3,31 @@
 
 #define USB_BUF_ZONE_INDEX 0x36
 
-enum {
+typedef struct color {
+    unsigned char red;
+    unsigned char green;
+    unsigned char blue;
+} color;
+
+typedef enum {
     LED_ROTATION_STATIC = 0x01,
     LED_ROTATION_BREATHING = 0x06,
     LED_ROTATION_CYCLE = 0x07,
     LED_ROTATION_BLINKING = 0x08,
-};
+} tracerled_mode;
 
-enum {
+typedef enum {
     LED_ZONE_LOGO = 0x01,
     LED_ZONE_BAR = 0x02,
-    LED_ZONE_SOME_FAN = 0x03, // ??
+    LED_ZONE_UNKNOWN_1 = 0x03, // ??
     LED_ZONE_CPU = 0x04,
     LED_ZONE_FRONT_FAN_BOTTOM = 0x05,
-    LED_ZONE_FRONT_FAN_TOP = 0x06,
-};
+    LED_ZONE_FRONT_FAN_MIDDLE = 0x06,
+    LED_ZONE_FRONT_FAN_TOP = 0x07,
+} tracerled_zone;
+
+typedef struct tracerled_packet {
+    tracerled_zone zone;
+    tracerled_mode mode;
+    unsigned char brightness;
+} trackerled_packet;
